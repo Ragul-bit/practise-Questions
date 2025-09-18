@@ -1,15 +1,10 @@
 import java.util.Scanner;
-
 public class TriangleType {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-
-        // Input: three sides
         int a = sc.nextInt();
         int b = sc.nextInt();
         int c = sc.nextInt();
-
-        // Check type of triangle
         if (a == b && b == c) {
             System.out.println("Equilateral Triangle");
         } else if (a == b || b == c || a == c) {
@@ -17,7 +12,7 @@ public class TriangleType {
         } else {
             System.out.println("Scalene Triangle");
         }
-
         sc.close();
     }
 }
+
