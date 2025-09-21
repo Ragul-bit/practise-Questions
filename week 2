@@ -1,0 +1,417 @@
+Q1: Print Digits (Right to Left)
+
+import java.util.Scanner;
+public class PrintDigits {
+    public static void main(String[] args) {
+        try (Scanner sc = new Scanner(System.in)) {
+            int n = sc.nextInt();
+            while (n > 0) {
+                int digit = n % 10;  
+                System.out.print(digit + " ");
+                n = n / 10;       
+            }
+        }
+    }
+}
+***************************************************
+Q2: Print Digits (Left to Right)
+
+import java.util.Scanner;
+public class PrintDigitsLeftToRight {
+    public static void main(String[] args) {
+        try (Scanner sc = new Scanner(System.in)) {
+            String n = sc.next(); 
+            for (int i = 0; i < n.length(); i++) {
+                System.out.print(n.charAt(i) + " ");
+            }
+        }
+    }
+}
+***************************************************
+Q3: Count Digits
+
+import java.util.Scanner;
+public class CountDigits {
+    public static void main(String[] args) {
+        try (Scanner sc = new Scanner(System.in)) {
+            long n = sc.nextLong();  
+            int count = 0;
+            while (n > 0) {
+                count++;
+                n = n / 10;  
+            }
+            System.out.println(count);
+        }
+    }
+}
+**************************************************
+Q4: Sum of Digits
+
+import java.util.Scanner;
+public class SumOfDigits {
+    public static void main(String[] args) {
+        try (Scanner sc = new Scanner(System.in)) {
+            int n = sc.nextInt();   
+            int sum = 0;
+            while (n > 0) {
+                int digit = n % 10;   
+                sum += digit;         
+                n = n / 10;           
+            }
+            System.out.println(sum);
+        }
+    }
+}
+**************************************************
+Q5: Armstrong Number
+
+import java.util.Scanner;
+public class ArmstrongNumber {
+    public static void main(String[] args) {
+        try (Scanner sc = new Scanner(System.in)) {
+            int n = sc.nextInt();   
+            int original = n;
+            int len = String.valueOf(n).length();
+            int sum = 0;
+            while (n > 0) {
+                int digit = n % 10;
+                sum += Math.pow(digit, len);  
+                n = n / 10;
+            }
+            if (sum == original) {
+                System.out.println("Armstrong Number");
+            } else {
+                System.out.println("Not an Armstrong Number");
+            }
+        }
+    }
+}
+******************************************************
+Q6: Collatz Sequence
+
+import java.util.Scanner;
+public class CollatzSequence {
+    public static void main(String[] args) {
+        try (Scanner sc = new Scanner(System.in)) {
+            int n = sc.nextInt();   
+            while (n != 1) {
+                System.out.print(n + ", ");
+                if (n % 2 == 0) {
+                    n = n / 2;
+                } else {
+                    n = 3 * n + 1;
+                }
+            }
+        }
+        System.out.print(1);  
+    }
+}
+***************************************************
+Q7: Harshad / Niven Number
+
+import java.util.Scanner;
+public class HarshadNumber {
+    public static void main(String[] args) {
+        try (Scanner sc = new Scanner(System.in)) {
+            int n = sc.nextInt();   
+            int original = n;
+            int sum = 0;
+            while (n > 0) {
+                sum += n % 10;
+                n = n / 10;
+            }
+            if (original % sum == 0) {
+                System.out.println("Harshad Number");
+            } else {
+                System.out.println("Not Harshad Number");
+            }
+        }
+    }
+}
+****************************************************
+Q8: Spy Number
+
+import java.util.Scanner;
+public class SpyNumber {
+    public static void main(String[] args) {
+        try (Scanner sc = new Scanner(System.in)) {
+            int n = sc.nextInt();   
+            int sum = 0, product = 1, temp = n;
+            while (temp > 0) {
+                int digit = temp % 10;
+                sum += digit;
+                product *= digit;
+                temp = temp / 10;
+            }
+            if (sum == product) {
+                System.out.println("Spy Number");
+            } else {
+                System.out.println("Not Spy Number");
+            }
+        }
+    }
+}
+******************************************************
+Q9: Neon Number
+
+import java.util.Scanner;
+public class NeonNumber {
+    public static void main(String[] args) {
+        try (Scanner sc = new Scanner(System.in)) {
+            int n = sc.nextInt();  
+            int square = n * n;
+            int sum = 0;
+            while (square > 0) {
+                sum += square % 10;
+                square /= 10;
+            }
+            if (sum == n) {
+                System.out.println("Neon Number");
+            } else {
+                System.out.println("Not Neon Number");
+            }
+        }
+    }
+}
+******************************************************
+Q10: Reverse a Number
+
+import java.util.Scanner;
+public class ReverseNumber {
+    public static void main(String[] args) {
+        try (Scanner sc = new Scanner(System.in)) {
+            int n = sc.nextInt();   
+            int rev = 0;
+            while (n > 0) {
+                int digit = n % 10;     
+                rev = rev * 10 + digit; 
+                n = n / 10;             
+            }
+            System.out.println(rev);
+        }
+    }
+}
+**************************************************
+Q11: Palindrome Number
+
+import java.util.Scanner;
+public class PalindromeNumber {
+    public static void main(String[] args) {
+        try (Scanner sc = new Scanner(System.in)) {
+            int n = sc.nextInt();      
+            int original = n;
+            int rev = 0;
+            while (n > 0) {
+                int digit = n % 10;
+                rev = rev * 10 + digit;
+                n = n / 10;
+            }
+            if (rev == original) {
+                System.out.println("Palindrome");
+            } else {
+                System.out.println("Not Palindrome");
+            }
+        }
+    }
+}
+************************************************
+Q12: Strong Number
+
+import java.util.Scanner;
+public class StrongNumber {
+    static int factorial(int n) {
+        int fact = 1;
+        for (int i = 1; i <= n; i++) {
+            fact *= i;
+        }
+        return fact;
+    }
+    public static void main(String[] args) {
+        try (Scanner sc = new Scanner(System.in)) {
+            int n = sc.nextInt();    
+            int original = n;
+            int sum = 0;
+            while (n > 0) {
+                int digit = n % 10;
+                sum += factorial(digit);  
+                n /= 10;
+            }
+            if (sum == original) {
+                System.out.println("Strong Number");
+            } else {
+                System.out.println("Not Strong Number");
+            }
+        }
+    }
+}
+***********************************************
+Q13: Magic Number
+
+import java.util.Scanner;
+public class MagicNumber {
+    static int sumOfDigits(int n) {
+        while (n > 9) {  
+            int sum = 0;
+            while (n > 0) {
+                sum += n % 10;
+                n /= 10;
+            }
+            n = sum;
+        }
+        return n;
+    }
+    public static void main(String[] args) {
+        try (Scanner sc = new Scanner(System.in)) {
+            int n = sc.nextInt();   
+            int result = sumOfDigits(n);
+            if (result == 1) {
+                System.out.println("Magic Number");
+            } else {
+                System.out.println("Not Magic Number");
+            }
+        }
+    }
+}
+*******************************************
+Q14: Center Digit of a Number
+
+import java.util.Scanner;
+public class CenterDigit {
+    public static void main(String[] args) {
+        try (Scanner sc = new Scanner(System.in)) {
+            String n = sc.next();   
+            int len = n.length();
+            if (len % 2 == 0) {
+                System.out.println(-1);  
+            } else {
+                int midIndex = len / 2;  
+                System.out.println(n.charAt(midIndex));
+            }
+        }
+    }
+}
+*****************************************
+Q15: Frequency of Digits 
+
+import java.util.Scanner;
+public class FrequencyOfDigits {
+    public static void main(String[] args) {
+        try (Scanner sc = new Scanner(System.in)) {
+            String n = sc.next();  
+            int[] freq = new int[10];  
+            for (int i = 0; i < n.length(); i++) {
+                char c = n.charAt(i);
+                freq[c - '0']++;
+            }
+            for (int i = 0; i <= 9; i++) {
+                if (freq[i] > 0) {
+                    System.out.print(i + "→" + freq[i] + ", ");
+                }
+            }
+        }
+    }
+}
+*****************************************
+Q16: GCD (Euclidean Algorithm)
+
+import java.util.Scanner;
+public class GCD {
+    static int gcd(int a, int b) {
+        if (b == 0) return a;
+        return gcd(b, a % b);
+    }
+    public static void main(String[] args) {
+        try (Scanner sc = new Scanner(System.in)) {
+            int a = sc.nextInt();
+            int b = sc.nextInt();
+            System.out.println(gcd(a, b));
+        }
+    }
+}
+****************************************
+Q17: Swap First and Last Digit
+
+import java.util.Scanner;
+public class SwapFirstLastDigit {
+    public static void main(String[] args) {
+        try (Scanner sc = new Scanner(System.in)) {
+            String n = sc.next(); 
+            if (n.length() == 1) {
+                System.out.println(n);  
+                return;
+            }
+            char[] arr = n.toCharArray();
+            char temp = arr[0];
+            arr[0] = arr[arr.length - 1];
+            arr[arr.length - 1] = temp;
+
+            System.out.println(String.valueOf(arr));
+        }
+    }
+}
+*****************************************
+Q18: First / Last Occurrence of a Digit
+
+import java.util.Scanner;
+public class FirstLastOccurrence {
+    public static void main(String[] args) {
+        try (Scanner sc = new Scanner(System.in)) {
+            String n = sc.next();        
+            char digit = sc.next().charAt(0);  
+            int first = -1, last = -1;
+            for (int i = 0; i < n.length(); i++) {
+                if (n.charAt(i) == digit) {
+                    if (first == -1) first = i + 1; 
+                    last = i + 1;
+                }
+            }
+            if (first == -1) {
+                System.out.println("Digit not found");
+            } else {
+                System.out.println("First=" + first + ", Last=" + last);
+            }
+        }
+    }
+}
+**************************************
+Q19: Product of Digits
+
+import java.util.Scanner;
+public class ProductOfDigits {
+    public static void main(String[] args) {
+        try (Scanner sc = new Scanner(System.in)) {
+            int n = sc.nextInt();   
+            int product = 1;
+            if (n == 0) {
+                System.out.println(0);
+                return;
+            }
+            while (n > 0) {
+                int digit = n % 10;
+                product *= digit;
+                n /= 10;
+            }
+            System.out.println(product);
+        }
+    }
+}
+****************************************
+Q20: Sum of Even Digits
+
+import java.util.Scanner;
+public class SumOfEvenDigits {
+    public static void main(String[] args) {
+        try (Scanner sc = new Scanner(System.in)) {
+            int n = sc.nextInt();  
+            int sum = 0;
+            while (n > 0) {
+                int digit = n % 10;
+                if (digit % 2 == 0) {
+                    sum += digit;
+                }
+                n /= 10;
+            }
+            System.out.println(sum);
+        }
+    }
+}
